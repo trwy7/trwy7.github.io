@@ -1,7 +1,11 @@
 ## Welcome to Trey's website
 
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
 ### Projects
+I have make many projects including a [file locker](https://trey7658.github.io/filelock)
 
+### About me
+
+I like coding. I have a github page [here.](https://github.com/trey7658)
+
+### Other
+I dont know what else to put on this website for now.
