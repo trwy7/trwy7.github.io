@@ -1,7 +1,8 @@
 ## Welcome to Trey's website
 
 ### Projects
-I have make many projects including a [file locker](https://trey7658.github.io/filelock)
+I am a good coder with batch. You can find my projects [here](https://trey7658.github.io/projects).
+
 
 ### About me
 
