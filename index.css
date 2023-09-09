@@ -4,7 +4,6 @@
 button {
     background: #5E5DF0;
     border-radius: 999px;
-    box-shadow: #5E5DF0 0 10px 20px -10px;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
@@ -21,12 +20,23 @@ button {
     width: fit-content;
     word-break: break-word;
     border: 0;
-  }
+}
+
+button:hover {
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(4px);
+}
+
 .container {
     align-items: center;
     justify-content: center;
     border-color: #222222;
     border-style: solid;
+    border-width: 3px;
     border-radius: 20px;
     padding: 20px;
     align-items: center;
@@ -54,10 +64,30 @@ button {
     text-align: center;
 }
 
+@-webkit-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@-moz-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@keyframes Animation { 
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+
 body {
-    background: linear-gradient(to bottom right, #0ba3e9, #8a41ff);
     margin: 0;
     font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    background: linear-gradient(to bottom right, #0ba3e9, #8a41ff, #e615c3, #8a41ff, #0ba3e9);
+    background-size: 200% 200%;
+    -webkit-animation: Animation 17s ease infinite;
+    -moz-animation: Animation 17s ease infinite;
+    animation: Animation 17s ease infinite;
 }
 html, body {
     margin: 0;
