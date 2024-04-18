@@ -9,6 +9,7 @@ body {
     animation: wave 7s infinite linear;
     background-attachment: fixed;
     overflow: hidden;
+    margin: 0px;
 }
 
 @keyframes wave {
@@ -102,12 +103,12 @@ body {
 }
 #source {
     border-radius: 50%;
+    position: relative;
+    top: 0;
+    right: 0;
     border: #3a393f 2px solid;
-    padding: 3px;
-    width: 75px;
-    height: 75px;
-    margin: 20px;
-    margin-bottom: 5px;
+    width: 100%;
+    height: 100%;
     background: #242329;
     color: white;
     text-align: center;
@@ -122,6 +123,12 @@ body {
     position: absolute;
     top: 0;
     right: 0;
+    right: 10px;
+    width: 81px;
+    height: 81px;
+    margin: 20px;
+    padding: 3px;
+    transform: translateY(-3px);
 }
 button {
     background-color: #535258;
@@ -164,7 +171,6 @@ button:active {
     }
     #pfp {
         border: #b6b6b6 3px solid;
-        background-image: url('images/pfp.gif');
         box-shadow: none;
     }
     button {
@@ -181,5 +187,12 @@ button:active {
     }
     #github:hover {
         color: #8957e5;
+    }
+    .social {
+        color: #000;
+    }
+    #source {
+        border: #b6b6b6 3px solid;
+        box-shadow: none;
     }
 }
