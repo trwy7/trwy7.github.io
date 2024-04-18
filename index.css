@@ -4,8 +4,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: radial-gradient(#45434f 2px, transparent 0);
-    background-size: calc(100vw / 15) calc(100vw / 15);
+    background-image: radial-gradient(#7a7880 2px, transparent 0);
+    background-size: 80px 80px;
     animation: wave 7s infinite linear;
     background-attachment: fixed;
     overflow: hidden;
@@ -19,22 +19,41 @@ body {
         background-position: 0 -80px;
     }
 }
+/* 
+@keyframes spinpfp {
+    0% {
+        transform: rotate(0deg);
+        background-image: url('images/pfp.png');
+    }
+    100% {
+        transform: rotate(360deg);
+        background-image: url('images/pfp.png');
+    }
+} */
+
 #outer {
     overflow: auto;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     text-align: left;
-    height: calc(100vh - 250px);
-    margin: 125px;
-    margin-left: 75vh;
-    margin-right: 75vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     color: #fff;
     background-color: #28272e;
+    width: 40%;
+    max-width: 80%;
+    position: absolute;
     font-family: 'Cascadia Code', monospace;
-    border-radius: 3rem;
+    border-radius: 2.75rem;
     border: #535258 2px solid;
     box-shadow: inset 0 0 6px #000, 0 0 20px #000;
+    height: 80%;
+    margin-top: 10px;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
 #bottom {
     border-top: #535258 2px solid;
@@ -42,10 +61,16 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
+    /* height: 125px; */
+    height: 50px;
+    overflow-y: auto;
+    text-align: center;
+    align-content: center;
 }
 #content {
     padding: 20px;
     padding-top: 0px;
+    padding-left: 27px;
 }
 .highlight {
     background: linear-gradient(45deg, #8C51D6, #DE8B5D);
@@ -53,12 +78,85 @@ body {
     background-clip: text;
     color: transparent;
 }
+
+.social {
+    color: #fff;
+    text-decoration: none;
+    transition: all 250ms;
+}
+#github:hover {
+    color: #8768c2;
+}
 #pfp {
     border-radius: 50%;
-    border: rgba(255,255,255, 0.1) 2px solid;
+    border: #3a393f 2px solid;
     padding: 3px;
     width: 75px;
     height: 75px;
     margin: 20px;
     margin-bottom: 5px;
+    background: #242329;
+    background-image: url('images/pfp.gif');
+    background-size: cover;
+    box-shadow: inset 0 0 6px #000, 0 0 25px #000;
+}
+button {
+    background-color: #535258;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px 0px;
+    cursor: pointer;
+    transition: margin 250ms, background-color 250ms;
+}
+button:hover {
+    background-color: #464646;
+    margin: 15px 10px;
+}
+button:active {
+    background-color: #DE8B5D;
+    margin: 15px 0px;
+}
+.social {
+    font-size: 25px;
+}
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #e9e9e9;
+        background-image: radial-gradient(#4e4c53 2px, transparent 0);
+    }
+    #outer {
+        background-color: #ffffff;
+        color: black;
+        border: #cacacb 2px solid;
+        box-shadow: 0 0 20px #ffffff;
+    }
+    #bottom {
+        border-top: #cacacb 2px solid;
+        box-shadow: 0 0 6px #ffffff;
+    }
+    #pfp {
+        border: #b6b6b6 3px solid;
+        background-image: url('images/pfp.gif');
+        box-shadow: none;
+    }
+    button {
+        background-color: #d3d2d7;
+        color: #000000;
+    }
+    button:hover {
+        background-color: #b6b6b6;
+        margin: 10px;
+    }
+    button:active {
+        background-color: #DE8B5D;
+        margin: 0px;
+    }
+    #github:hover {
+        color: #8957e5;
+    }
 }
