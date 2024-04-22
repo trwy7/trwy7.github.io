@@ -3,19 +3,14 @@ window.onload = function() {
   };
 
 function newpage() {
-    if (getBrowser() === 'Firefox') {
-        var firefoxWarn = document.createElement("p"); 
-        firefoxWarn.innerHTML = "Some elements on the page are currently broken on firefox.";
-        firefoxWarn.style = "font-size: 0.7em;";
-        document.getElementById("content").appendChild(firefoxWarn);
-    }
+    console.log('New page loaded');
 }
 
-function loadPage(url, button) {
+function loadPage(url) {
     if (typeof url !== 'string') {
         throw new Error('Invalid argument. Expected a string.');
     }
-    button.innerHTML = 'Loading...';
+    // button.innerHTML = 'Loading...';
     document.getElementById('body').classList.add('leave');
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() { 
