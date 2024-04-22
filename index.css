@@ -54,9 +54,9 @@ body {
         transform: translate(-50%, -50%) scale(0);
     }
 }
-.leave {
+/* .leave {
     background-image: none;
-}
+} */
 #outer {
     overflow: auto;
     display: flex;
