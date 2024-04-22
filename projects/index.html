@@ -3,6 +3,7 @@
     <head>
         <title>Hello!</title>
         <link rel="stylesheet" href="/index.css">
+        <script src="/index.js"></script>
         <script src="https://kit.fontawesome.com/089aa5bfeb.js" crossorigin="anonymous"></script>
     </head>
     <body id="body">
@@ -15,7 +16,7 @@
                 <p></p>
             </div>
             <div id="bottom">
-                <button style="border-radius: 500px;" onclick="document.getElementById('body').classList.add('leave'); setTimeout(() => {window.location.href = '/';}, 1250)"><i class="fa-solid fa-circle-xmark"></i> Back</button><br>
+                <button style="border-radius: 500px;" onclick="loadPage('/')"><i class="fa-solid fa-circle-xmark"></i> Back</button><br>
             </div>
         </div>
         <a href="https://github.com/trwy7/trwy7.github.io" id="sourcelink"><div id="source"><i class="fa-solid fa-code-compare"></i></div></a>
