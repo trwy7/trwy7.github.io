@@ -113,6 +113,7 @@ body {
     padding: 20px;
     padding-top: 0px;
     padding-left: 27px;
+    z-index: -1;
 }
 .highlight {
     background: linear-gradient(45deg, #8C51D6, #DE8B5D);
@@ -153,7 +154,6 @@ body {
     color: white;
     text-align: center;
     align-items: center;
-    align-content: center;
     justify-content: center;
     font-size: 35px;
     background-size: cover;
