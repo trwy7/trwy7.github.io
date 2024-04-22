@@ -30,6 +30,8 @@ function loadPage(url) {
             newpage();
         } else {
             console.error('Request did not succeed before timeout.')
+            alert('Failed to connect');
+            location.reload();
         }
         // window.location.href = url;
     }, 1250);
