@@ -157,10 +157,18 @@ body {
     margin: 20px;
     margin-bottom: 5px;
     background: #242329;
-    background-image: url('images/pfp.gif');
     background-size: cover;
-    box-shadow: inset 0 0 6px #000, 0 0 25px #000;
+    box-shadow: 0 0 25px #000;
     z-index: 20;
+    cursor: pointer;
+    transition: box-shadow 250ms;
+}
+#pfp:hover {
+    box-shadow: 0 0 15px #DE8B5D;
+    transition: box-shadow 250ms;
+}
+#pfp:active {
+    box-shadow: inset 0 0 6px #000, 0 0 15px #DE8B5D;
 }
 #load {
     position: fixed;

@@ -77,6 +77,11 @@ function loadPage(url) {
     }, 1100);
     
 }
+function changePfp() {
+    var files = ['images/pfp.gif', 'images/pfp1.gif', 'images/pfp2.gif', 'images/pfp3.gif']
+    var img = document.getElementById('pfp').style.backgroundImage.replace('url("', '').replace('")', '');
+    document.getElementById('pfp').style.backgroundImage = 'url("' + files[files[files.indexOf(img) + 1] != undefined ? files.indexOf(img) + 1 : 0] + '")';
+}
 function getBrowser() {
     const userAgent = navigator.userAgent;
 
