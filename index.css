@@ -21,18 +21,6 @@ body {
         background-position: 0 -80px;
     }
 }
-/* 
-@keyframes spinpfp {
-    0% {
-        transform: rotate(0deg);
-        background-image: url('images/pfp.png');
-    }
-    100% {
-        transform: rotate(360deg);
-        background-image: url('images/pfp.png');
-    }
-} */
-
 @keyframes popout {
     0% {
         transform: translate(200%, -50%) scale(0.9);
@@ -88,21 +76,6 @@ body {
         transform: translate(-50%, -50%) scale(0);
     }
 }
-@keyframes popoutexternal {
-    /* Not used yet */
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    10% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(0);
-    }
-}
-/* .leave {
-    background-image: none;
-} */
 #outer {
     overflow: auto;
     display: flex;
@@ -121,11 +94,13 @@ body {
     box-shadow: inset 0 0 6px #000, 0 0 20px #000;
     height: 80%;
     margin-top: 10px;
-    animation: popout 1.1s forwards ease-in-out;
     z-index: 1;
 }
+.enter > #outer {
+    animation: popout 1.1s forwards ease-in-out !important;
+}
 .leave > #outer {
-    animation: popin 1.1s forwards ease-in-out !important;
+    animation: popin 1.1s forwards ease-in-out;
 }
 .leaveExternal > #outer {
     animation: popinexternal 1.1s forwards ease-in-out !important;

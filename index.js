@@ -10,6 +10,7 @@ function loadPage(url) {
     if (typeof url !== 'string') {
         throw new Error('Invalid argument. Expected a string.');
     }
+    document.body.classList.remove('enter')
     const oldurl = window.location.pathname;
     // button.innerHTML = 'Loading...';
     if (url.startsWith('/')) {
@@ -35,19 +36,23 @@ function loadPage(url) {
                     var parser = new DOMParser();
                     var doc = parser.parseFromString(xmlHttp.responseText, "text/html");
                     document.getElementById('outer').innerHTML = doc.getElementById('outer').innerHTML;
+                    document.body.classList.add('enter');
                     document.body.classList.remove('leave');
                     newpage();
                     break;
                 } else {
+                    document.body.classList.add('loading');
                     if (xmlHttp.status != 200 && xmlHttp.readyState == 4) {
                         if (xmlHttp.status == 404) {
                             alert('Failed to connect: 404 (Page not found)');
+                            document.body.classList.add('enter');
                             document.body.classList.remove('leave');
                             document.body.classList.remove('loading');
                             console.error('404 while loading page')
                             break;
                         }
                         alert('Failed to connect: Error ' + xmlHttp.status);
+                        document.body.classList.add('enter');
                         document.body.classList.remove('leave');
                         document.body.classList.remove('loading');
                         console.error('Error while loading page')
@@ -56,10 +61,11 @@ function loadPage(url) {
                     if (i == 49) {
                         console.error('Request did not succeed before timeout.')
                         alert('Failed to connect');
+                        document.body.classList.add('enter');
                         document.body.classList.remove('leave');
                         document.body.classList.remove('loading');
+                        break;
                     }
-                    document.body.classList.add('loading');
                     await new Promise(r => setTimeout(r, 250));
                     i = i + 1;
                 }
