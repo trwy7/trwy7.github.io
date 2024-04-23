@@ -140,10 +140,15 @@ body {
     text-decoration: none;
     transition: all 250ms;
     margin-bottom: 50px;
+    margin: 5px;
 }
 #github:hover {
     color: #8768c2;
 }
+#discord:hover {
+    color: #5865f2;
+}
+
 #pfp {
     border-radius: 50%;
     border: #3a393f 2px solid;
@@ -224,14 +229,10 @@ button:not(#sourcelink) {
 }
 button:not(#sourcelink):hover {
     background-color: #464646;
-    border-radius: 15px !important;
-    box-shadow: 0 0 10px #DE8B5D;
-    margin: 15px 15px;
 }
 button:not(#sourcelink):active {
     border: 1px solid #DE8B5D;
     background-color: #DE8B5D;
-    margin: 15px 10px;
 }
 .social {
     font-size: 25px;
