@@ -74,7 +74,7 @@ function loadPage(url) {
             window.location.href = url;
         }
         // window.location.href = url;
-    }, 1000);
+    }, 1100);
     
 }
 function getBrowser() {
