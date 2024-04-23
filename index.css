@@ -142,7 +142,7 @@ body {
     background-image: url('images/pfp.gif');
     background-size: cover;
     box-shadow: inset 0 0 6px #000, 0 0 25px #000;
-    z-index: 5;
+    z-index: 20;
 }
 #source {
     display: flex;
@@ -160,7 +160,7 @@ body {
     line-height: 100%;
     box-shadow: inset 0 0 6px #000, 0 0 25px #000;
     cursor: pointer;
-    z-index: 5;
+    z-index: 20;
 }
 #sourcelink {
     border-radius: 50%;
@@ -170,6 +170,7 @@ body {
     right: 10px;
     width: 81px;
     height: 81px;
+    color: #242329;
     margin: 20px;
     padding: 3px;
     transform: translateY(-3px);
@@ -237,6 +238,12 @@ button:active {
     }
     #source {
         border: #b6b6b6 3px solid;
+        color: black;
+        background-color: #ffffff;
+        text-decoration: none;
         box-shadow: none;
+    }
+    #sourcelink {
+        color: white;
     }
 }
