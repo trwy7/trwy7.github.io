@@ -11,15 +11,16 @@
         <div id="outer">
             <div id="content">
                 <p style="font-size: 0.7em; margin-top: 22px;" class="highlight"></p>
+                <p id="screenwarn">Your screen size is too small, some items may not display properly</p>
                 <h1 style="margin-top: 1px;">Hello!</h1>
                 <p>content</p>
             </div>
             <div id="bottom">
                 <!-- Legacy button: <a href="/projects" id="code"><button style="border-radius: 500px;"><i class="fa-solid fa-code"></i> Projects</button></a><br> -->
-                <button style="border-radius: 15px;" onclick="loadPage('/projects')"><i class="fa-solid fa-code"></i> Projects</button><br>
+                <button style="border-radius: 15px 0px 0px 15px;" onclick="loadPage('/projects')"><i class="fa-solid fa-code"></i> Projects</button><button style="border-radius: 0px 15px 15px 0px;" onclick="loadPage('/more')"><i class="fa-solid fa-code"></i> More</button><br>
                 <a href="https://github.com/trwy7" class="social" id="github"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
-        <a href="https://github.com/trwy7/trwy7.github.io" id="sourcelink"><div id="source"><i class="fa-solid fa-code-compare"></i></div></a>
+        <div id="source"><button onclick="loadPage('https\://github.com/trwy7/trwy7.github.io')" id="sourcelink"><i class="fa-solid fa-code-compare"></i></button></div>
     </body>
 </html>

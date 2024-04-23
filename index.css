@@ -35,35 +35,68 @@ body {
 @keyframes popout {
     0% {
         transform: translate(200%, -50%) scale(0.9);
+        box-shadow: inset 0 0 6px #000, 0 0 15px #000;
     }
     10% {
         transform: translate(200%, -50%) scale(0.9);
+        box-shadow: inset 0 0 6px #000, 0 0 15px #000;
     }
     20% {
         transform: translate(200%, -50%) scale(0.9);
+        box-shadow: inset 0 0 6px #000, 0 0 15px #000;
     }
     90% {
         transform: translate(-50%, -50%) scale(0.9);
+        box-shadow: inset 0 0 6px #000, 0 0 15px #000;
     }
     100% {
         transform: translate(-50%, -50%) scale(1);
+        box-shadow: inset 0 0 6px #000, 0 0 20px #000;
     }
 }
 @keyframes popin {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: inset 0 0 6px #000, 0 0 20px #000;
+    }
+    10% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: inset 0 0 6px #000, 0 0 20px #000;
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(0.9);
+        box-shadow: inset 0 0 6px #000, 0 0 15px #000;
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(0.9);
+        box-shadow: inset 0 0 6px #000, 0 0 15px #000;
+    }
+    100% {
+        transform: translate(-250%, -50%) scale(0.9);
+        box-shadow: inset 0 0 6px #000, 0 0 15px #000;
+    }
+}
+@keyframes popinexternal {
     0% {
         transform: translate(-50%, -50%) scale(1);
     }
     10% {
         transform: translate(-50%, -50%) scale(1);
     }
-    20% {
-        transform: translate(-50%, -50%) scale(0.9);
+    100% {
+        transform: translate(-50%, -50%) scale(0);
     }
-    30% {
-        transform: translate(-50%, -50%) scale(0.9);
+}
+@keyframes popoutexternal {
+    /* Not used yet */
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    10% {
+        transform: translate(-50%, -50%) scale(1);
     }
     100% {
-        transform: translate(-250%, -50%) scale(0.9);
+        transform: translate(-50%, -50%) scale(0);
     }
 }
 /* .leave {
@@ -93,6 +126,9 @@ body {
 }
 .leave > #outer {
     animation: popin 1.1s forwards ease-in-out !important;
+}
+.leaveExternal > #outer {
+    animation: popinexternal 1.1s forwards ease-in-out !important;
 }
 ::-webkit-scrollbar {
     width: 0px;
@@ -136,7 +172,6 @@ body {
 #pfp {
     border-radius: 50%;
     border: #3a393f 2px solid;
-    padding: 3px;
     width: 75px;
     height: 75px;
     margin: 20px;
@@ -148,40 +183,40 @@ body {
     z-index: 20;
 }
 #source {
-    display: flex;
-    border-radius: 50%;
-    border: #3a393f 2px solid;
-    width: 100%;
-    height: 100%;
-    background: #242329;
-    color: white;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-size: 35px;
-    background-size: cover;
-    line-height: 100%;
-    box-shadow: inset 0 0 6px #000, 0 0 25px #000;
-    cursor: pointer;
-    z-index: 20;
-}
-#sourcelink {
-    border-radius: 50%;
     position: absolute;
     top: 0;
     right: 0;
-    right: 10px;
-    width: 81px;
-    height: 81px;
-    color: #242329;
+    border-radius: 50%;
+    border: #3a393f 2px solid;
+    width: 75px;
+    height: 75px;
     margin: 20px;
-    padding: 3px;
-    transform: translateY(-3px);
+    background: #242329;
+    box-shadow: inset 0 0 6px #000, 0 0 25px #000;
+    z-index: 20;
 }
-button {
+#sourcelink {
+    border: none;
+    font-size: 35px;
+    background: #242329;
+    cursor: pointer;
+    color: white;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    transition: box-shadow 250ms;
+}
+#sourcelink:hover {
+    box-shadow: 0 0 15px #DE8B5D;
+    transition: box-shadow 250ms;
+}
+#sourcelink:active {
+    box-shadow: inset 0 0 6px #000, 0 0 15px #DE8B5D;
+}
+button:not(#sourcelink) {
     background-color: #535258;
     color: #fff;
-    border: none;
+    border: 1px solid #403f44;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -189,19 +224,22 @@ button {
     font-size: 16px;
     margin: 15px 0px;
     cursor: pointer;
-    transition: margin 250ms, background-color 250ms;
+    transition: margin 250ms, background-color 250ms, box-shadow 250ms, border-radius 100ms;
 }
-button:hover {
+button:not(#sourcelink):hover {
     background-color: #464646;
+    border-radius: 15px !important;
+    box-shadow: 0 0 10px #DE8B5D;
     margin: 15px 10px;
 }
-button:active {
+button:not(#sourcelink):active {
     background-color: #DE8B5D;
-    margin: 15px 0px;
+    margin: 10px 0px;
 }
 .social {
     font-size: 25px;
 }
+#screenwarn {display: none;}
 @media (prefers-color-scheme: light) {
     body {
         background-color: #e9e9e9;
@@ -246,7 +284,9 @@ button:active {
         text-decoration: none;
         box-shadow: none;
     }
-    #sourcelink {
-        color: white;
+}
+@media (max-width: 800px) {
+    #screenwarn {
+        display: block;
     }
 }
