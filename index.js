@@ -48,15 +48,16 @@ function loadPage(url) {
                             break;
                         }
                         alert('Failed to connect: Error ' + xmlHttp.status);
+                        document.body.classList.remove('leave');
                         document.body.classList.remove('loading');
-                        location.reload();
                         console.error('Error while loading page')
                         break;
                     }
                     if (i == 49) {
                         console.error('Request did not succeed before timeout.')
                         alert('Failed to connect');
-                        location.reload();
+                        document.body.classList.remove('leave');
+                        document.body.classList.remove('loading');
                     }
                     document.body.classList.add('loading');
                     await new Promise(r => setTimeout(r, 250));
