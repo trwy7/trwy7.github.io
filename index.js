@@ -6,15 +6,22 @@ function newpage() {
     console.log('New page loaded');
 }
 
-function loadPage(url) {
+function loadPage(url, button) {
     if (typeof url !== 'string') {
         throw new Error('Invalid argument. Expected a string.');
     }
     document.body.classList.remove('enter')
+    document.body.classList.remove('enterReverse')
     const oldurl = window.location.pathname;
     // button.innerHTML = 'Loading...';
+    console.log(button.innerHTML)
     if (url.startsWith('/')) {
-        document.getElementById('body').classList.add('leave');
+        if (button.innerHTML == '<i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Back') {
+            document.getElementById('body').classList.add('leaveReverse');
+        } else {
+            document.getElementById('body').classList.add('leave');
+        }
+        
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() { 
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -36,8 +43,9 @@ function loadPage(url) {
                     var parser = new DOMParser();
                     var doc = parser.parseFromString(xmlHttp.responseText, "text/html");
                     document.getElementById('outer').innerHTML = doc.getElementById('outer').innerHTML;
-                    document.body.classList.add('enter');
+                    if (button.innerHTML == '<i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Back') {document.body.classList.add('enterReverse');} else {document.body.classList.add('enter');}
                     document.body.classList.remove('leave');
+                    document.body.classList.remove('leaveReverse');
                     newpage();
                     break;
                 } else {
@@ -45,15 +53,17 @@ function loadPage(url) {
                     if (xmlHttp.status != 200 && xmlHttp.readyState == 4) {
                         if (xmlHttp.status == 404) {
                             alert('Failed to connect: 404 (Page not found)');
-                            document.body.classList.add('enter');
+                            if (button.innerHTML == '<i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Back') {document.body.classList.add('enterReverse');} else {document.body.classList.add('enter');};
                             document.body.classList.remove('leave');
+                            document.body.classList.remove('leaveReverse');
                             document.body.classList.remove('loading');
                             console.error('404 while loading page')
                             break;
                         }
                         alert('Failed to connect: Error ' + xmlHttp.status);
-                        document.body.classList.add('enter');
+                        if (button.innerHTML == '<i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Back') {document.body.classList.add('enterReverse');} else {document.body.classList.add('enter');};
                         document.body.classList.remove('leave');
+                        document.body.classList.remove('leaveReverse');
                         document.body.classList.remove('loading');
                         console.error('Error while loading page')
                         break;
@@ -61,8 +71,9 @@ function loadPage(url) {
                     if (i == 49) {
                         console.error('Request did not succeed before timeout.')
                         alert('Failed to connect');
-                        document.body.classList.add('enter');
+                        if (button.innerHTML == '<i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Back') {document.body.classList.add('enterReverse');} else {document.body.classList.add('enter');};
                         document.body.classList.remove('leave');
+                        document.body.classList.remove('leaveReverse');
                         document.body.classList.remove('loading');
                         break;
                     }
