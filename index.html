@@ -7,20 +7,22 @@
         <script src="https://kit.fontawesome.com/089aa5bfeb.js" crossorigin="anonymous"></script>
     </head>
     <body id="body">
-        <div id="pfp" style="background-image: url('images/pfp.gif'); " onclick="changePfp()"></div>
+        <div id="pfp" style="background-image: url('/images/pfp.gif'); display: none;" onclick="changePfp()"></div>
         <div id="load"><h1 id="loadinner">Loading...</h1></div>
         <div id="outer">
             <div id="content">
                 <p style="font-size: 0.7em; margin-top: 22px;" class="highlight"></p>
+                <noscript>This site relies on javascript, some features may have been disabled.</noscript>
                 <h1 style="margin-top: 1px;">Hello!</h1>
                 <p>content</p>
             </div>
-            <div id="bottom">
+            <div id="bottom" style="display: none;">
                 <!-- Legacy button: <a href="/projects" id="code"><button style="border-radius: 500px;"><i class="fa-solid fa-code"></i> Projects</button></a><br> -->
                 <button style="border-radius: 15px 0px 0px 15px;" onclick="loadPage('/projects', this)"><i class="fa-solid fa-code"></i> Projects</button><button style="border-radius: 0px 15px 15px 0px;" onclick="loadPage('/more', this)"><i class="fa-solid fa-code"></i> More</button><br>
+                <span style="font-size: 10px;"><br></span>
                 <a href="https://github.com/trwy7" class="social" id="github"><i class="fa-brands fa-github"></i></a><a href="https://discord.com/users/354427199023218689" class="social" id="discord"><i class="fa-brands fa-discord"></i></a>
             </div>
         </div>
-        <div id="source"><button onclick="loadPage('https\://github.com/trwy7/trwy7.github.io', this)" id="sourcelink"><i class="fa-solid fa-code-compare"></i></button></div>
+        <div id="source" style="display: none;"><button onclick="loadPage('https\://github.com/trwy7/trwy7.github.io', this)" id="sourcelink"><i class="fa-solid fa-code-compare"></i></button></div>
     </body>
 </html>

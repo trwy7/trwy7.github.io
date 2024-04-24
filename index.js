@@ -4,6 +4,9 @@ window.onload = function() {
 
 function newpage() {
     console.log('New page loaded');
+    document.getElementById('source').style.display = '';
+    document.getElementById('pfp').style.display = '';
+    document.getElementById('bottom').style.display = '';
 }
 
 function loadPage(url, button) {
@@ -14,7 +17,6 @@ function loadPage(url, button) {
     document.body.classList.remove('enterReverse')
     const oldurl = window.location.pathname;
     // button.innerHTML = 'Loading...';
-    console.log(button.innerHTML)
     if (url.startsWith('/')) {
         if (button.innerHTML == '<i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Back') {
             document.getElementById('body').classList.add('leaveReverse');
@@ -45,8 +47,9 @@ function loadPage(url, button) {
                     document.getElementById('outer').innerHTML = doc.getElementById('outer').innerHTML;
                     if (button.innerHTML == '<i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Back') {document.body.classList.add('enterReverse');} else {document.body.classList.add('enter');}
                     document.body.classList.remove('leave');
-                    document.body.classList.remove('leaveReverse');
+                    document.body.classList.remove('leaveReverse');                        
                     newpage();
+                    document.getElementById('title').innerHTML = doc.getElementById('title').innerHTML;
                     break;
                 } else {
                     document.body.classList.add('loading');
@@ -89,7 +92,7 @@ function loadPage(url, button) {
     
 }
 function changePfp() {
-    var files = ['images/pfp.gif', 'images/pfp1.gif', 'images/pfp2.gif', 'images/pfp3.gif']
+    var files = ['/images/pfp.gif', '/images/pfp1.gif', '/images/pfp2.gif', '/images/pfp3.gif']
     var img = document.getElementById('pfp').style.backgroundImage.replace('url("', '').replace('")', '');
     document.getElementById('pfp').style.backgroundImage = 'url("' + files[files[files.indexOf(img) + 1] != undefined ? files.indexOf(img) + 1 : 0] + '")';
 }
