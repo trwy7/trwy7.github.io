@@ -7,6 +7,22 @@ function newpage() {
     document.getElementById('source').style.display = '';
     document.getElementById('pfp').style.display = '';
     document.getElementById('bottom').style.display = '';
+    const buttons = Array.from(document.getElementsByClassName('navbutton'));
+    if (buttons.length == 1) {
+        buttons[0].style.borderRadius = '10px';
+    } else if (buttons.length > 1) {
+        var i = 0;
+        buttons.forEach(button => {
+            if (i == 0) {
+                button.style.borderTopLeftRadius = '10px';
+                button.style.borderBottomLeftRadius = '10px';
+            } else if (i == buttons.length - 1) {
+                button.style.borderTopRightRadius = '10px';
+                button.style.borderBottomRightRadius = '10px';
+            }
+            i = i + 1;
+        });
+    }
 }
 
 function loadPage(url, button) {
