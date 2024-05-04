@@ -159,6 +159,12 @@ body {
     width: 0px;
     background: transparent;
 }
+#buttondiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* adjust 100px to your needs */
+    width: 85%;
+    margin: 0 auto;
+}
 #bottom {
     border-top: #535258 2px solid;
     box-shadow: inset 0 0 6px #000, 0 0 6px #000;
@@ -191,12 +197,6 @@ body {
     transition: all 250ms;
     margin: 5px;
     margin-top: 15px;
-}
-#github:hover {
-    color: #8768c2;
-}
-#discord:hover {
-    color: #5865f2;
 }
 
 #pfp {
@@ -289,8 +289,14 @@ button:not(#sourcelink):hover {
     background-color: #464646;
 }
 button:not(#sourcelink):active {
-    border: 1px solid #DE8B5D;
+    border: none;
     background-color: #DE8B5D;
+}
+#github:active {
+    background-color: #8250DF !important;
+}
+#discord:active {
+    background-color: #5865f2 !important;
 }
 .social {
     font-size: 25px;
@@ -305,30 +311,33 @@ button:not(#sourcelink):active {
         background-color: #ffffff;
         color: black;
         border: #cacacb 2px solid;
-        box-shadow: 0 0 20px #ffffff;
+        box-shadow: none !important;
     }
     #bottom {
         border-top: #cacacb 2px solid;
-        box-shadow: 0 0 6px #ffffff;
+        box-shadow: none !important;
     }
     #pfp {
         border: #b6b6b6 3px solid;
-        box-shadow: none;
+        box-shadow: none !important;
     }
     button {
-        background-color: #d3d2d7;
-        color: #000000;
+        background-color: #d3d2d7 !important;
+        color: #000000 !important;
     }
     button:hover {
-        background-color: #b6b6b6;
-        margin: 10px;
+        background-color: #b6b6b6 !important;
     }
-    button:active {
-        background-color: #DE8B5D;
-        margin: 0px;
+    button:not(#sourcelink) {
+        border: none;
+        background-color: #DE8B5D !important;
+        color: white !important;
     }
-    #github:hover {
-        color: #8957e5;
+    div #github {
+        background-color: #8250DF !important;
+    }
+    div #discord {
+        background-color: #5865f2 !important;
     }
     .social {
         color: #000;

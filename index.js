@@ -7,9 +7,11 @@ function newpage() {
     document.getElementById('source').style.display = '';
     document.getElementById('pfp').style.display = '';
     document.getElementById('bottom').style.display = '';
-    const buttons = Array.from(document.getElementsByClassName('navbutton'));
+    const buttons = Array.from(document.querySelectorAll('#bottom div button'));
     if (buttons.length == 1) {
         buttons[0].style.borderRadius = '10px';
+        buttons[0].parentElement.id = '';
+        buttons[0].style.width = '85%';
     } else if (buttons.length > 1) {
         var i = 0;
         buttons.forEach(button => {
@@ -99,7 +101,7 @@ function loadPage(url, button) {
                     await new Promise(r => setTimeout(r, 250));
                     i = i + 1;
                 }
-            } while (i < 50);
+            } while (i < 100);
         } else {
             window.location.href = url;
         }
