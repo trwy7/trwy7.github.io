@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title id="title">Debug</title>
+        <link rel="stylesheet" href="/index.css">
+        <script src="/index.js"></script>
+        <script src="https://kit.fontawesome.com/089aa5bfeb.js" crossorigin="anonymous"></script>
+        <meta property="og:title" content="Debug page"/>
+        <meta property="og:type" content="profile"/>
+        <meta property="og:url" content="https://trey7658.com"/>
+        <meta property="og:image" content="/images/pfp.gif"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:description" content="Trwy's good ol' debug page "/>
+        <link rel="icon" href="/favicon.ico" />
+    </head>
+    <body id="body">
+        <div id="pfp" style="background-image: url('/images/pfp.gif'); display: none;" onclick="changePfp()"></div>
+        <div id="load"><h1 id="loadinner">Loading...</h1></div>
+        <div id="outer">
+            <div id="content">
+                <p style="font-size: 0.7em; margin-top: 22px;" class="highlight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, deserunt, molestiae quis ipsa est placeat ab magnam quos, dolores recusandae porro! Incidunt rerum laboriosam hic reprehenderit enim delectus amet mollitia?</p>
+                <noscript>This site relies on javascript, some features may have been disabled.</noscript>
+                <h1 style="margin-top: 1px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, deserunt mollitia dolorem ipsum esse reprehenderit cumque fugit assumenda labore veniam quasi numquam repellendus, consequuntur cupiditate consectetur distinctio aspernatur. In, repudiandae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, aut veritatis, laboriosam fuga eligendi impedit, tempore quas alias natus esse quibusdam delectus. Non voluptas in quisquam voluptatum, at obcaecati blanditiis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum facilis autem dolor excepturi incidunt odit amet molestias soluta minus officiis sapiente obcaecati quasi a assumenda, nulla dicta laborum animi blanditiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quidem perferendis dignissimos id, unde numquam consequuntur obcaecati dolor recusandae sint, laudantium ea itaque sunt suscipit nostrum. Praesentium aperiam odio maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias nobis nam nostrum. Corrupti quaerat quam iste eum, molestias, tenetur similique laudantium cupiditate nobis, magnam quo odit dolore numquam ducimus tempore? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quasi cum laborum sapiente deserunt consequatur necessitatibus repudiandae cumque distinctio animi nesciunt, dignissimos quibusdam vitae blanditiis assumenda omnis ratione amet dolores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quod omnis tempore sunt ut harum est minus maxime fugit saepe placeat, corrupti praesentium rerum incidunt ipsam perferendis obcaecati nemo. Commodi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic optio, quisquam explicabo maxime facere veritatis quibusdam excepturi quas ullam est consequuntur pariatur, dolorem voluptatum impedit magnam possimus, blanditiis repellat! Maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatum eum ea vitae numquam accusamus mollitia maiores explicabo facere ab, neque beatae soluta debitis alias voluptatem aperiam consectetur molestiae iure! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maiores eos ex provident earum? Consectetur, eveniet ipsa soluta nobis a quisquam accusantium, cum inventore impedit reprehenderit, reiciendis molestiae harum minus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, fuga eos? Veritatis ullam, molestias vitae molestiae pariatur ducimus labore dicta incidunt, porro at maiores numquam adipisci eligendi cum perspiciatis expedita.</p>
+            </div>
+            <div id="bottom" style="display: none;">
+                <!-- Legacy button: <a href="/projects" id="code"><button style="border-radius: 500px;"><i class="fa-solid fa-code"></i> Projects</button></a><br> -->
+                <div id="buttondiv">
+                    <button onclick="loadPage('/debug/content', this)">Back</button>
+                </div>
+            </div>
+        </div>
+        <div id="source" style="display: none;"><button onclick="loadPage('https\://github.com/trwy7/trwy7.github.io', this)" id="sourcelink"><i class="fa-solid fa-code-compare"></i></button></div>
+    </body>
+</html>

@@ -2,6 +2,17 @@ const params = new URLSearchParams(window.location.search);
 
 window.onload = function() {
     newpage();
+    let source = document.querySelector('#sourcelink');
+    let sourceClick;
+    source.addEventListener('mousedown', () => {
+        sourceClick = setTimeout(function () {
+            loadPage('/debug', source);
+        }, 2500);
+    });
+
+    document.addEventListener('mouseup', () => {
+        clearTimeout(sourceClick);
+    });
   };
 
 function newpage() {

@@ -120,6 +120,9 @@ body {
         transform: translate(-50%, -50%) scale(0);
     }
 }
+a {
+    color: white;
+}
 #outer {
     overflow: auto;
     display: flex;
@@ -348,6 +351,9 @@ button:not(#sourcelink):active {
         background-color: #ffffff;
         text-decoration: none;
         box-shadow: none;
+    }
+    a {
+        color: black;
     }
 }
 @media (max-width: 650px) {
