@@ -12,7 +12,7 @@ function newpage() {
         buttons[0].style.borderRadius = '10px';
         buttons[0].parentElement.id = '';
         buttons[0].style.width = '85%';
-    } else if (buttons.length > 1) {
+    } else if (buttons.length <= 3) {
         var i = 0;
         buttons.forEach(button => {
             if (i == 0) {
@@ -23,6 +23,11 @@ function newpage() {
                 button.style.borderBottomRightRadius = '10px';
             }
             i = i + 1;
+        });
+    }
+    if (buttons.length >= 3 && window.innerWidth < 650){
+        buttons.forEach(button => {
+            button.style.borderRadius = '0px';
         });
     }
 }
