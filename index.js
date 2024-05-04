@@ -1,3 +1,5 @@
+const params = new URLSearchParams(window.location.search);
+
 window.onload = function() {
     newpage();
   };
@@ -6,7 +8,9 @@ function newpage() {
     console.log('New page loaded');
     document.getElementById('source').style.display = '';
     document.getElementById('pfp').style.display = '';
-    document.getElementById('bottom').style.display = '';
+    if (params.get('stay') == null) {
+        document.getElementById('bottom').style.display = '';
+    }
     const buttons = Array.from(document.querySelectorAll('#bottom div button'));
     if (buttons.length == 1) {
         buttons[0].style.borderRadius = '10px';
