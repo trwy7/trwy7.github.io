@@ -37,7 +37,7 @@ function newpage() {
             i = i + 1;
         });
     }
-    if (buttons.length >= 3 && window.innerWidth < 650){
+    if (buttons.length > 3){
         buttons.forEach(button => {
             button.style.borderRadius = '0px';
         });

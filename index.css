@@ -164,7 +164,7 @@ a {
     border-top: #535258 2px solid;
     box-shadow: inset 0 0 6px #000, 0 0 6px #000;
     width: 100%;
-    max-height: 200px;
+    max-height: 500px;
     overflow-y: auto;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -391,7 +391,7 @@ button:not(#sourcelink):active {
         color: rgb(124, 124, 0);
     }
 }
-@media (max-width: 650px) {
+@media (max-width: 900px) {
     #screenwarn {
         display: block;
     }
@@ -400,5 +400,10 @@ button:not(#sourcelink):active {
     }
     #outer {
         width: 96%;
+    }
+}
+@media (max-width: 460px) {
+    #bottom div button {
+        border-radius: 0 !important;
     }
 }
