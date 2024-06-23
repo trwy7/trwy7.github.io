@@ -45,6 +45,21 @@ function newpage() {
     if (params.get('stay') == null) {
         document.getElementById('bottom').style.display = '';
     }
+    const activity = Array.from(document.querySelectorAll('#activity'));
+    if (activity.length != 0) {
+        const activityreq = new XMLHttpRequest();
+        activityreq.open("GET", 'https://api.lanyard.rest/v1/users/354427199023218689');
+        activityreq.send();
+
+        activityreq.onreadystatechange = (e) => {
+            const response = JSON.parse(activityreq.responseText);
+            if (response['success'] == true && response['data']['activities'].length != 0) {
+                activity.forEach(act => {
+                    act.style.display = '';
+                });
+            }
+        }
+    }
 }
 
 function loadPage(url, button) {
